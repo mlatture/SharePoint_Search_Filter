@@ -1,0 +1,24 @@
+<script type="text/javascript" src="/Style Library/js/jquery-1.11.3.min.js"></script>
+
+<input type="text" id="filter" onkeyup="keyupfunc(document.getElementById('filter').value);"></input> Search Contacts
+
+<script type="text/javascript">
+function keyupfunc()
+{
+var list = $("table.ms-listviewtable");
+var listItems = $("table.ms-listviewtable tr:not(.ms-viewheadertr)");
+var input = $("input#filter");
+     listItems.each(function() 
+     {
+  var text = $(this).text().toLowerCase(); 
+   if (text.indexOf(input.val()) != -1) 
+   { 
+        $(this).show();
+   }
+   else
+   {
+        $(this).hide();
+   }
+  });
+}
+</script>
